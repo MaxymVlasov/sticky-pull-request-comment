@@ -57,7 +57,6 @@ export async function findPreviousComment(
     const target = repository.pullRequest?.comments?.nodes?.find(
       (node: IssueComment | null | undefined) =>
         node?.author?.login === viewer.login.replace("[bot]", "") &&
-        !node?.isMinimized &&
         node?.body?.includes(h)
     )
     if (target) {
